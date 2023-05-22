@@ -1,0 +1,210 @@
+body {
+  background-image: url(../assets/images/space-back.png);
+  background-size: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  background: repeating-linear-gradient(
+    white,
+    white 2px,
+    rgb(152, 6, 6) 2px,
+    rgb(255, 0, 0) 3px
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: rgb(225, 76, 203) 1px 0 10px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(10, 46px);
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell {
+  height: 46px;
+  font-size: 20px;
+  background-color: rgb(236, 236, 236);
+  border-width: 6px 6px 6px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: #ffcdfa;
+  border-color: #fff4fe #cc43b5 #cc43b5 #fff4fe;
+}
+
+.cell:hover {
+  background-color: #ffcdfa;
+  opacity: 0.3;
+  border-width: 6px 6px 6px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #fff4fe #fff4fe #fff4fe #fff4fe;
+}
+
+.revealed {
+  background-color: #ffcdfa;
+  opacity: 0.7;
+  border-width: 6px 6px 6px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #fff4fe #fff4fe #fff4fe #fff4fe;
+}
+
+.bomb {
+  background-color: #ffcdfa;
+  opacity: 0.7;
+  border-color: #fff4fe #fff4fe #fff4fe #fff4fe;
+  transition: 0.2s ease-in-out;
+  position: relative;
+}
+
+.bomb::after {
+  content: "\1F47E";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 3px;
+  right: 0;
+}
+
+.flagged::after {
+  content: "\1F38F";
+}
+
+.restart {
+  margin: 0 auto;
+  display: block;
+  margin-top: 35px;
+  width: 160px;
+  height: 50px;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  border-width: 6px 6px 6px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: #ffcdfa;
+  border-color: #fff4fe #fff4fe #fff4fe #fff4fe;
+  opacity: 0.8;
+  color: rgb(17, 20, 89);
+  font-size: 25px;
+}
+
+.restart:hover {
+  opacity: 1;
+  background-color: #ffcdfa;
+  border-color: #fff4fe #cc43b5 #cc43b5 #fff4fe;
+}
+
+.restart:active {
+  transform: translateY(4px);
+}
+
+.switch {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  border-width: 6px 6px 6px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: #ffcdfa;
+  border-color: #fff4fe #cc43b5 #cc43b5 #fff4fe;
+  font-size: 15px;
+}
+
+.switch::after {
+  content: "\1F56A";
+}
+
+.switch:active {
+  transform: translateY(4px);
+}
+
+.switch:hover {
+  background-color: #f6d6f3;
+}
+
+.color1,
+.color2,
+.color3,
+.color4 {
+  font-size: 25px;
+  text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+.color1 {
+  color: rgb(127, 13, 135);
+}
+
+.color2 {
+  color: rgb(17, 20, 89);
+}
+
+.color3 {
+  color: rgb(0, 127, 156);
+}
+
+.color4 {
+  color: rgb(0, 123, 255);
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    background-repeat: no-repeat;
+  }
+  .wrapper {
+    grid-template-columns: repeat(10, 25px);
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .cell {
+    height: 25px;
+    font-size: 10px;
+    border-width: 4px 4px 4px;
+  }
+
+  .bomb::after {
+    content: "\1F47E";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 2px;
+    right: 0;
+  }
+
+  .color1,
+  .color2,
+  .color3,
+  .color4 {
+    font-size: 10px;
+  }
+
+  .restart {
+    margin-top: 20px;
+    width: 120px;
+    height: 30px;
+    border-width: 4px 4px 4px;
+    font-size: 10px;
+  }
+
+  .switch {
+    border-width: 4px 4px 4px;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .switch::after {
+    position: relative;
+    bottom: 2px;
+  }
+}
